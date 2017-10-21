@@ -5,11 +5,6 @@
  * > 小程序支持以`CommonJS`规范组织代码结构
  */
 const wechat = require('./utils/wechat.js')
-
-/**
- * Douban API 模块
- * @type {Object}
- */
 const api = require('./utils/api.js')
 App({
     /**
