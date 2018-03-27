@@ -1,5 +1,5 @@
 const fetch = require('./fetch');
-const API_DOMAIN = 'https://api.it919.cn/';
+import {API_DOMAIN} from './api.config'
 
 /**
  * @param  {String} 接口地址   
@@ -16,4 +16,10 @@ function fetchApi(api, params) {
  */
 function Login(params) {
     return fetchApi('User/login', params).then(res => res.data);
+}
+
+
+
+module.exports = {
+    Login
 }
