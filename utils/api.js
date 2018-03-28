@@ -5,8 +5,8 @@ import {API_DOMAIN} from './api.config'
  * @param  {String} 接口地址   
  * @param  {Objece} params 接口参数参数
  */
-function fetchApi(api, params) {
-    return fetch(API_DOMAIN, api, params);
+function fetchApi(action, params) {
+    return fetch(API_DOMAIN,action, params);
 }
 
 /**
