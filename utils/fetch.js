@@ -13,12 +13,12 @@ module.exports = function(api, path, params) {
             url: `${api}/${path}`,
             data: Object.assign({}, params), //如果这里需要合并签名时间戳参数时候可以这么写
             header: { 'Content-Type': 'json' },
-           success: res => {
+            success: (res) => {
                 resolve(res.data)
             },
-            fail: err=>{
-				reject(err)
-			},
+            fail: (err) => {
+                reject(err)
+            },
         });
     });
 };

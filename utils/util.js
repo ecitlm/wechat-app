@@ -1,18 +1,3 @@
-const formatTime = date => {
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const hour = date.getHours()
-  const minute = date.getMinutes()
-  const second = date.getSeconds()
-
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
-}
-
-const formatNumber = n => {
-  n = n.toString()
-  return n[1] ? n : '0' + n
-}
 const Toast = {
     warn: function(val) {
         wx.showToast({
@@ -45,9 +30,9 @@ const Toast = {
             mask: true
         })
     },
-    alert: function(param) {
+    alert: function(val) {
         wx.showModal({
-            content: param,
+            content: val,
             showCancel: false
         })
     },
@@ -62,15 +47,14 @@ const Toast = {
             wx.hideLoading();
         }, 100);
     },
-    showModal:function (param="msg") { 
+    showModal: function(param = "msg") {
         wx.showModal({
             title: "",
             content: param,
             showCancel: false
         });
-     }
+    }
 }
 module.exports = {
-  formatTime,
-  Toast
+    Toast
 }
